@@ -1,0 +1,199 @@
+body{
+
+	margin: 0px;
+	padding: 0px;
+	font: 12px/1.3 'Arial','Microsoft YaHei';
+	color:#333333;
+	background-color: #A7D4F8;
+}
+::selection{
+	
+	color: white;
+	background-color: #EB7350;
+}
+a{
+	text-decoration:none;
+	cursor:pointer;
+}
+.clearfix{
+	
+	height: 0px;
+	overflow:hidden;
+	display:block;
+	font: 0px;
+	clear: both;
+}
+.page{
+	background-color:#FFF;
+	width: 900px;
+	margin: 0 auto;
+}
+
+.banner,.left,.foot{
+	
+	overflow: hidden;
+	margin:0 auto;
+}
+.banner{	
+	height:200px;
+	background: url("../image/banner.png") no-repeat;	
+	border-bottom: 2px solid #F62638;
+}
+.left{
+	float:left;
+	width:565px;
+	margin-left:0px;
+}
+.right{
+	//line-height:377px;
+	float:left;
+	width:335px;
+	height: 377px;
+}
+.left-logo{	
+	height:310px;
+	background: url("../image/left.png") no-repeat;	
+	
+}
+.go-regist{
+	background-color:#FFF;
+	padding:17px 0px 17px 30px;
+	font-size:24px;
+	font-style:italic;
+	line-height:32px;
+	border-bottom: 1px solid #E6E6E6;
+}
+.footer{
+	margin-left:0px;
+	border-left:1px solid #F7F7F8;
+	height:120px;
+	background: url("../image/foot.png") no-repeat;	
+}
+.tb-login{
+	border-collapse:collapse;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+.tb-login thead{
+	font-size:18px; 
+}
+.tb-login tbody{
+	display:block;
+	//margin-top: 20px;
+	text-align: right;
+}
+.tb-login tbody tr{
+	height: 30px;
+	line-height: 30px;
+}
+.title-login{
+	display:block;
+	text-align: right;
+	font-size: 12px;
+}
+.frame-login{
+	display:block;
+	height: 25px;
+	line-height: 25px;
+	border-radius:2px;
+	border:1px solid #CCCCCC;
+}
+.frame-reg,.ta-reg,.ra-reg,.sb-reg {
+	display: block;
+	margin:0 auto;
+	width:200px;
+	border-radius: 2px;
+	border:1px solid #CCCCCC;
+}
+.frame-reg {
+	margin-top: 10px;
+	height: 30px;
+	line-height: 30px;
+	vertical-align: middle;
+}
+.ta-reg{
+	resize:none;
+	height: 80px;
+	line-height: 20px;
+	
+}
+.bt-wrap{
+	display:block;
+	padding-left: 20px;
+}
+.go-regist-bt{
+	height: 30px;
+	width: 100px;
+	background-color: 
+}
+.sb-reg{
+	color:#FFF;
+	margin-top:20px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #FFA00A;
+	border: 1px solid #FFB33B;
+	border-radius:2px;
+	box-shadow:0px 0px 1px #FFF inset;
+	cursor: pointer;
+}
+.sb-reg:hover{
+	background-color:#FFB43E;
+}
+.lb-reg{
+	border-collapse:collapse;
+	display:block;
+	text-align: right;	
+}
+#btlogin{
+	display: block;
+	color:#FFF;
+	margin-top:20px;
+	height: 30px;
+	line-height: 30px;
+	width: 200px;
+	background-color: #FFA00A;
+	border: 1px solid #FFB33B;
+	border-radius:2px;
+	box-shadow:0px 0px 1px #FFF inset;
+	cursor: pointer;
+}
+#btlogin:hover{
+	background-color:#FFB43E;
+}
+.form-reg,.right-reg{
+	float:left;
+	//border: 1px solid;
+}
+.form-reg{
+	width:578px;
+	padding: 30px;
+	padding-left: 40px;
+}
+.right-reg{
+	width: 250px;
+	height: 250px;
+	//border: 1px solid;
+}
+.title{
+	display: block;
+	text-align:left;
+	font-size: 28px;
+	font-weight: bold;
+	padding-left:20px;
+	margin-bottom: 20px;
+}
+.msg{
+	display:block;
+	font-size: 12px;
+	//color:#E64141;
+	//padding-bottom: 10px;
+}
+.loginError{
+	text-align:left;
+	font-size:11px;
+	color:#E64141;
+}
+.islogin{
+	text-align: left;
+}

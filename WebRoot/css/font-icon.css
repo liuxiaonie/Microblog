@@ -1,0 +1,46 @@
+@font-face {
+	font-family: 'icon';
+	src:url('/font/icomoon.eot?-7y78sv');
+	src:url('/font/icomoon.eot?#iefix-7y78sv') format('embedded-opentype'),
+		url('/font/icomoon.woff?-7y78sv') format('woff'),
+		url('/font/icomoon.ttf?-7y78sv') format('truetype'),
+		url('/font/icomoon.svg?-7y78sv#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+[class*="icon-"] {
+	font-family: 'icon';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	//line-height:1px;
+	
+	/* ¿¹¾â³Ý =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*="icon-"]:hover{
+	cursor:pointer;
+	color:#EB7350;
+}
+.icon-message,.icon-set,.icon-home,.icon-hot,.icon-game,.icon-user{
+	color: #808080;
+	font-size: 22px;
+	vertical-align: top;
+}
+.icon-sub{
+	color: #FFF;
+	font-size: 24px;
+}
+.icon-search{
+	font-size: 17px;
+}
+.icon-cancel{
+	vertical-align: top;
+	font-size: 18px;
+	color: #808080;
+}
+.icon-conmmend{
+	
+	font-size: 15px;
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="userForm" type="com.weibo.formbean.UserForm"/>
+		<form-bean name="titleForm" type="com.weibo.formbean.TitleForm"/>
+	
+	</form-beans>	
+	
+	<global-forwards>
+		<forward name="message"  path="/WEB-INF/webpage/common/message.jsp"></forward>
+		<!-- 接受成功并返回 -->
+		<forward name="success" path="/WEB-INF/webpage/common/acc-success.jsp" ></forward>
+		<forward name="head" path="/WEB-INF/webpage/common/head.jsp" ></forward>		
+		<forward name="/" path="/WEB-INF/webpage/user/index.jsp" ></forward>
+	</global-forwards>
+	
+	
+	<action-mappings>		
+			
+		<!-- #####################################前台######################################## -->
+		<!-- 网站用户注册 -->
+		<action path="/register" name="userForm" scope="request" parameter="method">
+			<forward name="reg" path="/WEB-INF/webpage/user/register.jsp"/>
+		</action>
+		
+		<!-- 登陆 -->
+		<action path="/login" name="userForm" scope="request" parameter="method">
+			<forward name="login" path="/WEB-INF/webpage/user/login.jsp"></forward>
+			
+		</action>
+		<!-- 登出 -->
+		<action path="/logout" name="userForm" scope="request" parameter="method">
+			<forward name="logout" path="/WEB-INF/webpage/user/login.jsp" ></forward>
+		</action>
+		
+		<!-- 好友列表 -->
+		<action path="/friend" scope="request" parameter="method">		
+			<forward name="fans" path="/WEB-INF/webpage/friend/fans.jsp" ></forward>
+			<forward name="attention" path="/WEB-INF/webpage/friend/atte.jsp" ></forward>
+		</action>
+		
+		<!-- 操作列表 -->
+		<action path="/opr" scope="request" parameter="method">		
+			<forward name="at" path="/WEB-INF/webpage/op/at.jsp" ></forward>
+			<forward name="like" path="/WEB-INF/webpage/op/like.jsp" ></forward>
+			<forward name="comment" path="/WEB-INF/webpage/op/comment.jsp" ></forward>
+		</action>
+		
+		<!-- 话题 -->
+		<action path="/title" scope="request" parameter="method">
+			<forward name="title" path="/WEB-INF/webpage/topic/topic.jsp"></forward>
+			
+		</action>
+	</action-mappings>
+	<controller>
+	    <set-property property="processorClass" value="org.springframework.web.struts.DelegatingRequestProcessor"/>
+	</controller> 
+</struts-config>
