@@ -1,5 +1,7 @@
 package com.weibo.bean;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,10 +21,33 @@ public class User {
 	private String Unickname;
 	private String Uintro;
 	
-	@Id  @GeneratedValue
+	
 	/**
-	 * @return the uid
+	 * 
 	 */
+	public User() {
+	}
+	
+	/**
+	 * @param uid
+	 */
+	public User(Integer uid) {
+		Uid = uid;
+	}
+
+
+	public User(Integer uid, String uname, String upwd, String usex,
+			String unickname, String uintro) {
+		Uid = uid;
+		Uname = uname;
+		Upwd = upwd;
+		Usex = usex;
+		Unickname = unickname;
+		Uintro = uintro;
+	}
+
+	@Id  @GeneratedValue
+	
 	public Integer getUid() {
 		return Uid;
 	}

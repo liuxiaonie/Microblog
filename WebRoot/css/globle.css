@@ -24,12 +24,14 @@ a{
 	clear: both;
 }
 .btn{
+	border:0px;
 	background-color: #FF8140;
 	border-radius:2px;	
 	text-align:center;
 	font-size: 14px;
 	color: white;
 	text-decoration: none;
+	cursor: pointer;
 }
 .btn a{
 	

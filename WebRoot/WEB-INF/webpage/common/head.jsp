@@ -29,7 +29,7 @@
 				</li>
 				<li>
 					<a class="top-atags">
-						<i class="icon-user">&#xe604;<span class="s-text">${sessionScope.User.uname}</span></i>
+						<i class="icon-user">&#xe604;<span class="s-text">${sessionScope.User.unickname}</span></i>
 						
 					</a>
 				</li>
@@ -79,3 +79,25 @@
 	</div>
 	<div class="clearfix"></div>
 </div>  
+<div id="filter"></div>
+	<div id="dialog-box" class="radius">  <!-- 弹出框 -->
+		<div id="dialog-box-titile">
+			有什么新鲜事想告诉大家？<span id="cancel"><i class="icon-cancel">&#xe62c;</i></span>
+			<div class="clearfix"></div>
+		</div>
+		
+		<div class="dialog-box-input">
+			<div id="wb-num-wrap">
+				<div id="wb-num">
+					还可以输入<span id="input-num">140</span>字
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="dialog-input">
+				<textarea id="dialog-input"></textarea>	
+			</div>
+		</div>
+		<div class="dialog-box-fun">			
+			<a href="javascript:void(0);"  class="sub-btn btn">发布</a>			
+		</div>
+	</div>

@@ -12,7 +12,7 @@ $(document).ready(
 		$(".set-list").mouseover(
 			function() {
 			
-				$(this).siblings(".top-menulist-wrap").delay(400).slideDown();	
+				$(this).siblings(".top-menulist-wrap").slideDown('slow');	
 												
 			}
 		);

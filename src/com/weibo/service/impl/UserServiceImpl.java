@@ -1,5 +1,7 @@
 package com.weibo.service.impl;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.weibo.bean.Message;
 import com.weibo.bean.User;
 import com.weibo.service.inter.UserService;
 

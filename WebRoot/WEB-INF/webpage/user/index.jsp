@@ -31,15 +31,20 @@
 				<div class="title-area">
 						<span class="wb-frame-promt">有什么新鲜事想告诉大家？</span>
 				</div>
-				<div class="wb-input">
-					<textarea class="wb-input-frame"></textarea><!-- 这里不能留空格 -->
-				</div><!--wb-input end  -->
-				<div class="fun-area">			
-					<a href="javascript:void(0);"  class="sub-btn btn">发布</a>			
-				</div>
+					<form action="/message.do" method="post">
+					<input type="hidden" name="method" value="publish"/>
+						<div class="wb-input">
+						
+							<textarea class="wb-input-frame" name="mcontent"></textarea><!-- 这里不能留空格 -->
+						</div><!--wb-input end  -->
+						<div class="fun-area">			
+							<input type="submit" class="sub-btn btn" value="发布" />			
+						</div>
+					</form>
 			</div><!-- wb-frame end -->  
 			
 			<!-- 中间 微博显示区 -->
+		<c:forEach var="msg" items="${messageList}">
 			<div class="wb-content radius">
 				<div class="wb-content-head f">
 					<a>
@@ -48,12 +53,15 @@
 				</div>
 				<div class="wb-content-details f">
 					<div class="nickname">
-						<a href="javascript:void(0)">小P要努力睡觉</a>
+						<a href="javascript:void(0)">${msg.user.unickname}</a>
 					</div>
 					<div class="wb-text">
-					今天你吃了么？,我爱吃饭，爱手机号大家圣诞节圣诞回家睡觉的还是介绍的就是的很多很多很多很多很多很多话</div> <!-- weibo content -->
+					     ${msg.mcontent }	
+					</div> <!-- weibo content -->
 					<div class="sub-time">
-						<a class="atags">7分钟前</a>
+						<a class="atags" >
+						<fmt:formatDate value="${msg.mtime}" pattern="yyyy年M月d日 HH:mm:ss"/>
+						</a>
 					</div>
 				</div>
 				<div class="clearfix"></div>
@@ -74,110 +82,45 @@
 					</ul>
 					<div class="clearfix"></div>
 				</div>
-			</div><!-- wb-content end-->
-			<div class="wb-content radius">
-				<div class="wb-content-head f">
-					<a>
-						<img alt="头像" src="/image/2.jpg" />
-					</a>
-				</div>
-				<div class="wb-content-details f">
-					<div class="nickname">
-						<a href="javascript:void(0)">小P要努力睡觉</a>
-					</div>
-					<div class="wb-text">今天你吃了么？,我爱吃饭，爱手机号大家圣诞节圣诞回家睡觉的还是介绍的就是的很多很多很多很多很多很多话</div> <!-- weibo content -->
-					<div class="sub-time">
-						<a class="atags">7分钟前</a>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-				<div class="wb-operator">
-					<ul>
-						<li class="f">
-							<a>收藏</a>
-						</li>
-						<li  class="f">
-							<a>转发</a>
-						</li>
-						<li  class="f">
-							<a>评论</a>
-						</li>
-						<li  class="f" id="after">
-							<a>赞</a>
-						</li>
-					</ul>
-					<div class="clearfix"></div>
-				</div>
-			</div><!-- wb-content end-->
-			<div class="wb-content radius">
-				<div class="wb-content-head f">
-					<a>
-						<img alt="头像" src="/image/2.jpg" />
-					</a>
-				</div>
-				<div class="wb-content-details f">
-					<div class="nickname">
-						<a href="javascript:void(0)">小P要努力睡觉</a>
-					</div>
-					<div class="wb-text">今天你吃了么？,我爱吃饭，爱手机号大家圣诞节圣诞回家睡觉的还是介绍的就是的很多很多很多很多很多很多话</div> <!-- weibo content -->
-					<div class="sub-time">
-						<a class="atags">7分钟前</a>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-				<div class="wb-operator">
-					<ul>
-						<li class="f">
-							<a>收藏</a>
-						</li>
-						<li  class="f">
-							<a>转发</a>
-						</li>
-						<li  class="f">
-							<a>评论</a>
-						</li>
-						<li  class="f" id="after">
-							<a>赞</a>
-						</li>
-					</ul>
-					<div class="clearfix"></div>
-				</div>
-			</div><!-- wb-content end-->
-			<div class="wb-content radius">
-				<div class="wb-content-head f">
-					<a>
-						<img alt="头像" src="/image/2.jpg" />
-					</a>
-				</div>
-				<div class="wb-content-details f">
-					<div class="nickname">
-						<a href="javascript:void(0)">小P要努力睡觉</a>
-					</div>
-					<div class="wb-text">今天你吃了么？,我爱吃饭，爱手机号大家圣诞节圣诞回家睡觉的还是介绍的就是的很多很多很多很多很多很多话</div> <!-- weibo content -->
-					<div class="sub-time">
-						<a class="atags">7分钟前</a>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-				<div class="wb-operator">
-					<ul>
-						<li class="f">
-							<a>收藏</a>
-						</li>
-						<li  class="f">
-							<a>转发</a>
-						</li>
-						<li  class="f">
-							<a>评论</a>
-						</li>
-						<li  class="f" id="after">
-							<a>赞</a>
-						</li>
-					</ul>
-					<div class="clearfix"></div>
-				</div>
-			</div><!-- wb-content end-->
+			</div>
+			</c:forEach> 
+			<!-- wb-content end-->
 			
+			<!-- <div class="wb-content radius">
+				<div class="wb-content-head f">
+					<a>
+						<img alt="头像" src="/image/2.jpg" />
+					</a>
+				</div>
+				<div class="wb-content-details f">
+					<div class="nickname">
+						<a href="javascript:void(0)">小P要努力睡觉</a>
+					</div>
+					<div class="wb-text">今天你吃了么？,我爱吃饭，爱手机号大家圣诞节圣诞回家睡觉的还是介绍的就是的很多很多很多很多很多很多话</div> weibo content
+					<div class="sub-time">
+						<a class="atags">7分钟前</a>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="wb-operator">
+					<ul>
+						<li class="f">
+							<a>收藏</a>
+						</li>
+						<li  class="f">
+							<a>转发</a>
+						</li>
+						<li  class="f">
+							<a>评论</a>
+						</li>
+						<li  class="f" id="after">
+							<a>赞</a>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+			</div>wb-content end
+			 -->
 			
 		</div><!-- content end --> 
 		
@@ -241,28 +184,7 @@
 		</div><!-- right-nav end -->
 		<div class="clearfix"></div>
 	</div><!-- main end -->
-	<div id="filter"></div>
-	<div id="dialog-box" class="radius">  <!-- 弹出框 -->
-		<div id="dialog-box-titile">
-			有什么新鲜事想告诉大家？<span id="cancel"><i class="icon-cancel">&#xe62c;</i></span>
-			<div class="clearfix"></div>
-		</div>
-		
-		<div class="dialog-box-input">
-			<div id="wb-num-wrap">
-				<div id="wb-num">
-					还可以输入<span id="input-num">140</span>字
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<div class="dialog-input">
-				<textarea id="dialog-input"></textarea>	
-			</div>
-		</div>
-		<div class="dialog-box-fun">			
-			<a href="javascript:void(0);"  class="sub-btn btn">发布</a>			
-		</div>
-	</div>
+	
 	<script type="text/javascript" src="js/globle.js"></script>
 </body>
 </html>

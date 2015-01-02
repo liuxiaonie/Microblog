@@ -116,7 +116,7 @@ public class UserLoginAction extends DispatchAction{
 						
 						
 						request.getSession().setAttribute("User", us.find(uid));
-						return mapping.findForward("/");
+						return mapping.findForward("allMessage");
 					}
 				}
 			}

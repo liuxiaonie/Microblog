@@ -6,6 +6,7 @@
 	<form-beans>
 		<form-bean name="userForm" type="com.weibo.formbean.UserForm"/>
 		<form-bean name="titleForm" type="com.weibo.formbean.TitleForm"/>
+		<form-bean name="messageForm" type="com.weibo.formbean.MessageForm"/>
 	
 	</form-beans>	
 	
@@ -15,6 +16,7 @@
 		<forward name="success" path="/WEB-INF/webpage/common/acc-success.jsp" ></forward>
 		<forward name="head" path="/WEB-INF/webpage/common/head.jsp" ></forward>		
 		<forward name="/" path="/WEB-INF/webpage/user/index.jsp" ></forward>
+		<forward name="allMessage" path="/message.do?method=all"></forward>
 	</global-forwards>
 	
 	
@@ -47,6 +49,12 @@
 			<forward name="at" path="/WEB-INF/webpage/op/at.jsp" ></forward>
 			<forward name="like" path="/WEB-INF/webpage/op/like.jsp" ></forward>
 			<forward name="comment" path="/WEB-INF/webpage/op/comment.jsp" ></forward>
+		</action>
+		
+		<!-- 微博 -->
+		<action path="/message" name="messageForm" scope="request" parameter="method">
+			<forward name="publish" path="/WEB/webpage/user/index.jsp"></forward>
+			<forward name="all" path="/WEB/webpage/user/index.jsp"></forward>
 		</action>
 		
 		<!-- 话题 -->
